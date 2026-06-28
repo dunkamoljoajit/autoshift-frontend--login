@@ -2,7 +2,7 @@
 // 1. CONFIG & UTILITIES
 // =========================================================
 
-const API_BASE = 'แก้เป็นลิงก์ Back-end'; 
+const API_BASE = 'http://localhost:3000'; 
 
 function getUser() {
     const userStr = localStorage.getItem('user');

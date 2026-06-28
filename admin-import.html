@@ -154,14 +154,14 @@
    <script>
     // Check User Role & API Base
     document.addEventListener('DOMContentLoaded', () => {
-        //const userStr = localStorage.getItem('user');
-        //if (!userStr) { window.location.href = 'index.html'; return; }
-        //const user = JSON.parse(userStr);
-        //if (user.RoleID !== 1) {
-            //Swal.fire({ icon: 'error', title: 'ไม่มีสิทธิ์เข้าถึง', showConfirmButton: false, timer: 2000 }).then(() => {
-                //window.location.href = 'dashboard.html';
-            //});
-        //}
+        const userStr = localStorage.getItem('user');
+        if (!userStr) { window.location.href = 'index.html'; return; }
+        const user = JSON.parse(userStr);
+        if (user.RoleID !== 1) {
+            Swal.fire({ icon: 'error', title: 'ไม่มีสิทธิ์เข้าถึง', showConfirmButton: false, timer: 2000 }).then(() => {
+                window.location.href = 'dashboard.html';
+            });
+        }
     });
 
     // ----------------------------------------

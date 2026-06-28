@@ -86,7 +86,7 @@
     </div>
 
 <script>
-        const API_BASE_URL = 'แก้เป็นลิงก์ Back-end'; 
+        const API_BASE_URL = 'http://localhost:3000'; 
         let currentUserData = JSON.parse(localStorage.getItem('user'));
         const token = localStorage.getItem('token');
 
@@ -96,20 +96,20 @@
         
         document.addEventListener('DOMContentLoaded', async () => {
             // 🟡 ส่วนที่แก้ไข: ใช้ if-else เพื่อแยกทางกันเดิน
-            //const backLink = document.getElementById('back-link');
+            const backLink = document.getElementById('back-link');
             
-            //if (currentUserData.RoleID === 1) {
+            if (currentUserData.RoleID === 1) {
                 // ถ้าเป็น Head Nurse (Role 1) ให้ไปหน้านี้
-                //backLink.href = 'Headnurse_dashboard.html'; 
-            //} else {
-                // ถ้าเป็นพยาบาลทั่วไป (Role อื่นๆ) ให้ไปหน้านี้
-                //backLink.href = 'dashboard.html'; 
-            //}
+                backLink.href = 'Headnurse_dashboard.html'; 
+            } else {
+                //ถ้าเป็นพยาบาลทั่วไป (Role อื่นๆ) ให้ไปหน้านี้
+                backLink.href = 'dashboard.html'; 
+            }
 
-            //await fetchLatestUserData();
+            await fetchLatestUserData();
             
-            //document.getElementById('userNameDisplay').textContent = `${currentUserData.FirstName} ${currentUserData.LastName}`;
-            //document.getElementById('userRoleDisplay').textContent = (currentUserData.RoleID == 1) ? 'Head Nurse' : 'Nurse';
+            document.getElementById('userNameDisplay').textContent = `${currentUserData.FirstName} ${currentUserData.LastName}`;
+            document.getElementById('userRoleDisplay').textContent = (currentUserData.RoleID == 1) ? 'Head Nurse' : 'Nurse';
             
             loadImage();
 
